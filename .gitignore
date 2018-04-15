@@ -2,3 +2,9 @@
 *.pyc
 
 db.sqlite3
+
+bin/
+lib/
+include/
+local/
+share/
