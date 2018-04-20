@@ -27,6 +27,44 @@ Afin de simplifier l'installation des paquets dans les versions souhaitées il
 est préférable d'utiliser un environnement Python spécifique à l'aide de l'outil
 `virtualenv`.
 
+Si les sources de l'application sont installées dans le répertoire `/home/toto/displaysensors`, on
+peut créer l'environnement Python comme ceci ::
+
+  cd /home/toto
+  virtualenv displaysensors
+
+On doit ensuite activer l'environnement ::
+
+  cd /home/toto/displaysensors
+  source bin/activate
+
+Les dépendances Python du projet sont alors installées dans l'environnement avec
+la commande ::
+
+  pip install -r requirements.txt
+
+Configuration
+=============
+
+La configuration de l'application se trouve dans le fichier ::
+
+  /home/toto/displaysensors/displaysensors/settings.py
+
+Par défaut l'application utilise une base de données SQLite locale. Une fois les premiers tests
+réalisés il est possible d'utiliser un serveur de base de données en modifiant le fichier
+`settings.py`
+
+L'initialisation d'une nouvelle base de données est réalisée à l'aide de commandes `Django` ::
+
+  cd /home/toto/displaysensors
+  source bin/activate
+  python manage.py migrate
+  python createsuperuser
+
+Le serveur peut alors être lancé sur le port 8000 à l'aide de la commande ::
+
+  python manage.py runserver 0.0.0.0:8000
+
 
 URLs pertinentes
 ================
@@ -34,6 +72,7 @@ URLs pertinentes
 Si le serveur django est exécuté sur la machine locale, les URLs suivantes sont
 disponibles :
 
+* url du projet : https://github.com/poroussel/displaysensors
 * administration : http://127.0.0.1:8000/admin/
 * racine de l'API REST : http://127.0.0.1:8000/sensors/api/
 * liste des capteurs définis : http://127.0.0.1:8000/sensors/api/sensors/
