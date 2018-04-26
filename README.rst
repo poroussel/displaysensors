@@ -31,7 +31,7 @@ Si les sources de l'application sont installées dans le répertoire `/home/toto
 peut créer l'environnement Python comme ceci ::
 
   cd /home/toto
-  virtualenv displaysensors
+  virtualenv --system-site-packages displaysensors
 
 On doit ensuite activer l'environnement ::
 
