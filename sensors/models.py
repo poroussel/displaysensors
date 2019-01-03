@@ -15,8 +15,14 @@ class Sensor(models.Model):
     created = models.DateField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
-
+    def __unicode__(self):
+        return self.name
+    
 class Reading(models.Model):
     sensor = models.ForeignKey(Sensor)
     timestamp = models.DateTimeField(auto_now_add=True)
     value = models.DecimalField(max_digits=8, decimal_places=3)
+
+    def __unicode__(self):
+        return u'{} : {}'.format(self.sensor.name, self.value)
+    
