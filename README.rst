@@ -79,6 +79,14 @@ disponibles :
 * liste des valeurs enregistrées : http://127.0.0.1:8000/sensors/api/readings/
 
 
+Exemple d'envoi d'une donnée
+============================
+
+À l'aide de `curl` nous pouvons aisément envoyer une valeur pour le capteur d'id 1 ::
+
+  curl -d '{"sensor":1, "value":33.7}' -H "Content-Type: application/json" -X POST http://127.0.0.1:8000/sensors/api/readings/
+
+  
 Liens
 =====
 
