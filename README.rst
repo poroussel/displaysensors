@@ -59,11 +59,15 @@ L'initialisation d'une nouvelle base de données est réalisée à l'aide de com
   cd /home/toto/displaysensors
   source bin/activate
   python manage.py migrate
-  python createsuperuser
+  python manage.py createsuperuser
 
-Le serveur peut alors être lancé sur le port 8000 à l'aide de la commande ::
+Le serveur peut alors être lancé pour toutes les interfaces réseaux sur le port 8000 à l'aide de la commande ::
 
   python manage.py runserver 0.0.0.0:8000
+  
+Une fois le serveur actif la page d'administration sera disponible à l'adresse ::
+
+  http://127.0.0.1:8000/admin
 
 
 URLs pertinentes
@@ -72,7 +76,6 @@ URLs pertinentes
 Si le serveur django est exécuté sur la machine locale, les URLs suivantes sont
 disponibles :
 
-* url du projet : https://github.com/poroussel/displaysensors
 * administration : http://127.0.0.1:8000/admin/
 * racine de l'API REST : http://127.0.0.1:8000/sensors/api/
 * liste des capteurs définis : http://127.0.0.1:8000/sensors/api/sensors/
