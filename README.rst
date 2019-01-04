@@ -65,9 +65,7 @@ Le serveur peut alors être lancé pour toutes les interfaces réseaux sur le po
 
   python manage.py runserver 0.0.0.0:8000
   
-Une fois le serveur actif la page d'administration sera disponible à l'adresse ::
-
-  http://127.0.0.1:8000/admin
+Une fois le serveur actif la page d'administration sera disponible à l'adresse http://127.0.0.1:8000/admin
 
 
 URLs pertinentes
